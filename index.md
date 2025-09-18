@@ -3,9 +3,11 @@ layout: default
 title: Home
 ---
 
-# Welcome to My Site 🎉
-This is my new modern GitHub Pages website, powered by **Jekyll** + the **Cayman theme**.
+# 👋 Welcome
+This is my new **modern website**, built with GitHub Pages + the **Slate theme**.
 
-✅ Supports markdown  
-✅ Clean, modern design  
-✅ Easy to update
+- ⚡ Dark & professional design  
+- 🛠 Easy to edit with Markdown  
+- 📱 Works great on mobile and desktop  
+
+---

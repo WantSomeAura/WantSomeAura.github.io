@@ -1,5 +1,15 @@
-title: My Modern Site
-description: Welcome to my GitHub Pages site
-remote_theme: pages-themes/slate@v0.2.0
+title: "My Modern Site"
+description: "A professional site powered by Minimal Mistakes"
+remote_theme: "mmistakes/minimal-mistakes@4.24.0"
+
 plugins:
   - jekyll-remote-theme
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Navigation
+include:
+  - _pages
+
+# Optional: enable search
+search: true

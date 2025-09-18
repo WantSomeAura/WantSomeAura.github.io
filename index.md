@@ -1,7 +1,6 @@
 ---
 layout: home
-author_profile: true
 ---
 
-Welcome to my new **Minimal Mistakes** website! 🎉  
-Here I can share my **projects, blog posts, and portfolio**.
+# Welcome to WantSomeAura.github.io 🎉
+This is the **default GitHub Pages site** using the base Jekyll theme.

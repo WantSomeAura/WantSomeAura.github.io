@@ -31,7 +31,7 @@
       z-index: -2;
     }
 
-    /* Dark overlay */
+    /* Dark overlay with pulse */
     body::after {
       content: "";
       position: absolute;
@@ -39,8 +39,14 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: rgba(0, 0, 0, 0.55); /* Adjust darkness here */
+      background: rgba(0, 0, 0, 0.55);
       z-index: -1;
+      animation: pulse 3s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { background: rgba(0, 0, 0, 0.35); }
+      50% { background: rgba(0, 0, 0, 0.65); }
     }
 
     button {
@@ -103,6 +109,15 @@
       const msg = document.getElementById("message");
       msg.innerHTML = "";
       msg.style.display = "block";
+
+      // stop overlay pulse, make it stay dark
+      document.body.style.setProperty("--overlay-static", "true");
+      document.querySelector("body::after"); // force reflow
+
+      document.styleSheets[0].insertRule(
+        "body::after { animation: none !important; background: rgba(0,0,0,0.6) !important; }",
+        document.styleSheets[0].cssRules.length
+      );
 
       const text = messages[Math.floor(Math.random() * messages.length)];
 

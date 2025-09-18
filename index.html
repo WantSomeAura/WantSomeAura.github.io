@@ -12,10 +12,35 @@
       align-items: center;
       height: 100vh;
       margin: 0;
-      background: url('https://i.imgur.com/Jwla9hs.gif') no-repeat center center fixed;
-      background-size: cover;
       font-family: 'Black Ops One', cursive;
       color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Background GIF */
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('https://i.imgur.com/Jwla9hs.gif') no-repeat center center fixed;
+      background-size: cover;
+      z-index: -2;
+    }
+
+    /* Dark overlay */
+    body::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.55); /* Adjust darkness here */
+      z-index: -1;
     }
 
     button {
@@ -28,6 +53,7 @@
       cursor: pointer;
       box-shadow: 0 0 20px rgba(255,0,64,0.7), 0 0 40px rgba(106,0,255,0.5);
       transition: transform 0.2s ease-in-out;
+      z-index: 1;
     }
 
     button:hover {
@@ -44,6 +70,7 @@
       white-space: pre;
       border-right: 2px solid #ff2e2e;
       overflow: hidden;
+      z-index: 1;
     }
 
     @keyframes shake {

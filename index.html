@@ -7,12 +7,14 @@
   <style>
     body {
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       height: 100vh;
       margin: 0;
       background: #0d0d0d;
       font-family: Arial, sans-serif;
+      color: white;
     }
     button {
       background: linear-gradient(135deg, #6a00ff, #00d4ff);
@@ -29,9 +31,18 @@
       transform: scale(1.05);
       box-shadow: 0 6px 16px rgba(0,0,0,0.4);
     }
+    #message {
+      margin-top: 20px;
+      font-size: 1.2rem;
+      color: red;
+      display: none;
+    }
   </style>
 </head>
 <body>
-  <button onclick="alert('u dont even have much aura')">Want Some Aura</button>
+  <button onclick="document.getElementById('message').style.display='block'">
+    Want Some Aura
+  </button>
+  <div id="message">u dont even have much aura</div>
 </body>
 </html>

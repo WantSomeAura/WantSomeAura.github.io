@@ -16,33 +16,84 @@
       font-family: Arial, sans-serif;
       color: white;
     }
+
     button {
-      background: linear-gradient(135deg, #6a00ff, #00d4ff);
+      background: linear-gradient(135deg, #ff0040, #6a00ff);
       color: white;
       font-size: 1.5rem;
       padding: 1rem 2rem;
       border: none;
       border-radius: 12px;
       cursor: pointer;
-      transition: 0.2s ease-in-out;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      box-shadow: 0 0 20px rgba(255,0,64,0.7), 0 0 40px rgba(106,0,255,0.5);
+      transition: transform 0.2s ease-in-out;
     }
+
     button:hover {
-      transform: scale(1.05);
-      box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+      transform: scale(1.08);
+      box-shadow: 0 0 30px rgba(255,0,64,1), 0 0 60px rgba(106,0,255,0.8);
     }
+
     #message {
-      margin-top: 20px;
-      font-size: 1.2rem;
-      color: red;
+      margin-top: 30px;
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #ff2e2e;
       display: none;
+      white-space: pre;
+      border-right: 2px solid #ff2e2e;
+      overflow: hidden;
+    }
+
+    /* Savage shake animation */
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      20% { transform: translateX(-5px); }
+      40% { transform: translateX(5px); }
+      60% { transform: translateX(-5px); }
+      80% { transform: translateX(5px); }
+    }
+
+    .shake {
+      animation: shake 0.5s;
     }
   </style>
 </head>
 <body>
-  <button onclick="document.getElementById('message').style.display='block'">
-    Want Some Aura
-  </button>
-  <div id="message">u dont even have much aura</div>
+  <button onclick="showMessage()">Want Some Aura</button>
+  <div id="message"></div>
+
+  <script>
+    const messages = [
+      "bro thinks he has aura… not even a shadow 💀",
+      "you don’t even radiate aura, just static noise",
+      "no aura, no presence, you’re invisible out here",
+      "your aura meter is literally at 0 🤡",
+      "stop acting tough, aura bankruptcy detected"
+    ];
+
+    function showMessage() {
+      const msg = document.getElementById("message");
+      msg.innerHTML = "";
+      msg.style.display = "block";
+
+      // pick random savage line
+      const text = messages[Math.floor(Math.random() * messages.length)];
+
+      // typing effect
+      let i = 0;
+      function type() {
+        if (i < text.length) {
+          msg.innerHTML += text.charAt(i);
+          i++;
+          setTimeout(type, 40);
+        } else {
+          msg.classList.add("shake");
+          setTimeout(() => msg.classList.remove("shake"), 600);
+        }
+      }
+      type();
+    }
+  </script>
 </body>
 </html>

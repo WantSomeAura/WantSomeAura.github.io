@@ -1,13 +1,7 @@
 ---
-layout: default
-title: Home
+layout: home
+author_profile: true
 ---
 
-# 👋 Welcome
-This is my new **modern website**, built with GitHub Pages + the **Slate theme**.
-
-- ⚡ Dark & professional design  
-- 🛠 Easy to edit with Markdown  
-- 📱 Works great on mobile and desktop  
-
----
+Welcome to my new **Minimal Mistakes** website! 🎉  
+Here I can share my **projects, blog posts, and portfolio**.

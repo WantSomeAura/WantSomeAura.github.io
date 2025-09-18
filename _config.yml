@@ -1,9 +1,6 @@
-title: "My Modern Site"
-description: "A professional site powered by Minimal Mistakes"
-remote_theme: "mmistakes/minimal-mistakes@4.24.0"
+title: "WantSomeAura"
+description: "My GitHub Pages site"
+theme: minima
 
-plugins:
-  - jekyll-remote-theme
-  - jekyll-feed
-  - jekyll-seo-tag
-  - jekyll-include-cache
+author:
+  name: "WantSomeAura"
